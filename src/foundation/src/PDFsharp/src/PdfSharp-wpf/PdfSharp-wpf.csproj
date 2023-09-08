@@ -7,6 +7,8 @@
         <RootNamespace>PdfSharp</RootNamespace>
         <UseWPF>true</UseWPF>
         <DefineConstants>WPF;NET_ZIP</DefineConstants>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>D:\PROGRM\DotNet\Signature.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

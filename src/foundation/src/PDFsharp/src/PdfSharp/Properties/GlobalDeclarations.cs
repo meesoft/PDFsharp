@@ -11,6 +11,3 @@ using System.Runtime.InteropServices;
 //[assembly: XmlnsDefinition("http://schemas.empira.com/pdfsharp/2010/xaml/presentation", "PdfSharp.Windows")]
 //#endif
 
-// Temporary HACK for PDFsharp Universal Accessibility.
-[assembly: InternalsVisibleTo("PdfSharp.UA")]
-[assembly: InternalsVisibleTo("PdfSharp.UA-wpf")]

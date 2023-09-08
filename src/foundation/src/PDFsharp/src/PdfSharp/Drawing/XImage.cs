@@ -1167,6 +1167,8 @@ namespace PdfSharp.Drawing
 
         XImageFormat? _format;
 
+        public Boolean IsVarnish { get; set; }
+
 #if WPF
         /// <summary>
         /// Gets a value indicating whether this image is JPEG.

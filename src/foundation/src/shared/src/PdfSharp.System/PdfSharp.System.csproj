@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>PdfSharp</RootNamespace>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>D:\PROGRM\DotNet\Signature.snk</AssemblyOriginatorKeyFile>
     <!--<Error Condition="!Exists('C:\Process\Fail.txt')" Text="Process did not pass!" />-->
   </PropertyGroup>
 

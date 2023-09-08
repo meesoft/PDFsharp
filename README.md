@@ -60,3 +60,7 @@ Stefan Lange
 Thomas Hövel  
 Martin Ossendorf  
 Andreas Seifert
+
+## Changes in this fork
+
+Support for a spot color varnish channel when adding grayscale images

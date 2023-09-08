@@ -1371,12 +1371,37 @@ namespace PdfSharp.Pdf.Advanced
                     arrayColorSpace.Elements.Add(colorPalette.Reference!); // NRT
                     Elements[Keys.ColorSpace] = arrayColorSpace;
                 }
+                else if (_image.IsVarnish)
+                {
+                    var colorSpace = new PdfArray();
+                    colorSpace.Elements.Add(new PdfName("/Separation"));
+                    colorSpace.Elements.Add(new PdfName("/Varnish"));
+                    colorSpace.Elements.Add(new PdfName("/DeviceGray"));
+                    var dict = new PdfDictionary();
+                    AddArray(dict, "/C0", 0);
+                    AddArray(dict, "/C1", 1);
+                    AddArray(dict, "/Domain", 0, 1);
+                    dict.Elements.Add("/FunctionType", new PdfInteger(2));
+                    dict.Elements.Add("/N", new PdfInteger(2));
+                    AddArray(dict, "/Range", 0, 1);
+                    colorSpace.Elements.Add(dict);
+                    Elements[Keys.ColorSpace] = colorSpace;
+
+                }
                 else
                 {
                     Elements[Keys.ColorSpace] = new PdfName("/DeviceGray");
                 }
                 if (_image.Interpolate)
                     Elements[Keys.Interpolate] = PdfBoolean.True;
+            }
+
+            static void AddArray(PdfDictionary dict, string name, params int[] values)
+            {
+                var a = new PdfArray();
+                foreach (var value in values)
+                    a.Elements.Add(new PdfInteger(value));
+                dict.Elements.Add(name, a);
             }
         }
 
