@@ -1378,11 +1378,11 @@ namespace PdfSharp.Pdf.Advanced
                     colorSpace.Elements.Add(new PdfName("/Varnish"));
                     colorSpace.Elements.Add(new PdfName("/DeviceGray"));
                     var dict = new PdfDictionary();
-                    AddArray(dict, "/C0", 0);
-                    AddArray(dict, "/C1", 1);
+                    AddArray(dict, "/C0", 1);
+                    AddArray(dict, "/C1", 0);
                     AddArray(dict, "/Domain", 0, 1);
                     dict.Elements.Add("/FunctionType", new PdfInteger(2));
-                    dict.Elements.Add("/N", new PdfInteger(2));
+                    dict.Elements.Add("/N", new PdfInteger(1));
                     AddArray(dict, "/Range", 0, 1);
                     colorSpace.Elements.Add(dict);
                     Elements[Keys.ColorSpace] = colorSpace;
