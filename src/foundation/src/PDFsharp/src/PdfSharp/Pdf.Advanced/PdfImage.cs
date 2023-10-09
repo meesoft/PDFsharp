@@ -1376,14 +1376,14 @@ namespace PdfSharp.Pdf.Advanced
                     var colorSpace = new PdfArray();
                     colorSpace.Elements.Add(new PdfName("/Separation"));
                     colorSpace.Elements.Add(new PdfName("/Varnish"));
-                    colorSpace.Elements.Add(new PdfName("/DeviceGray"));
+                    colorSpace.Elements.Add(new PdfName("/DeviceCMYK"));
                     var dict = new PdfDictionary();
-                    AddArray(dict, "/C0", 1);
-                    AddArray(dict, "/C1", 0);
+                    AddArray(dict, "/C0", 0, 0, 0, 0);
+                    AddArray(dict, "/C1", 0, 1, 0, 1);
                     AddArray(dict, "/Domain", 0, 1);
                     dict.Elements.Add("/FunctionType", new PdfInteger(2));
-                    dict.Elements.Add("/N", new PdfInteger(1));
-                    AddArray(dict, "/Range", 0, 1);
+                    dict.Elements.Add("/N", new PdfInteger(1)); // Gamma?
+                    AddArray(dict, "/Range", 0, 1, 0, 1, 0, 1, 0, 1);
                     colorSpace.Elements.Add(dict);
                     Elements[Keys.ColorSpace] = colorSpace;
 
